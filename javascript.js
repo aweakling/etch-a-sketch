@@ -1,36 +1,46 @@
 const container = document.querySelector("#container");
 const resetBtn = document.querySelector(".resetBtn");
+const squareBtn = document.querySelector(".squareBtn");
 
 // create 16 squares
 function sketch(){    
-    for(let i = 1; i <= 16; i++){
-        const squares = document.createElement("div");
+    squareBtn.addEventListener("click", () => {
+        let size = parseInt(prompt("Size of grid", 16));
 
-        squares.classList.add("squares");
+        if(size > 64) size = 64;
 
-        squares.style.boxSizing = "border-box";
+        container.innerHTML = "";
 
-        container.appendChild(squares);
+        container.style.setProperty("--size", size);
 
-        for(let j = 1; j <= 16; j++) {
-            const miniSquares = document.createElement("div");
+        for(let i = 0; i < size * size; i++){
+            const squares = document.createElement("div");
 
-            miniSquares.classList.add("miniSquares");
+            squares.classList.add("miniSquares");
 
-            miniSquares.style.boxSizing = "border-box";
-
-            miniSquares.addEventListener("mouseenter", (e) => {
-                miniSquares.style.backgroundColor = "black";
+            squares.addEventListener("mouseenter", () => {
+                squares.style.backgroundColor = "black"
             });
 
-            squares.appendChild(miniSquares);
+            container.appendChild(squares);
+
+            // for(let j = 1; j <= size; j++) {
+            //     const miniSquares = document.createElement("div");
+
+            //     miniSquares.classList.add("miniSquares");
+
+            //     miniSquares.addEventListener("mouseenter", (e) => {
+            //         miniSquares.style.backgroundColor = "black";
+            //     });
+
+            //     squares.appendChild(miniSquares);
+            // }
         }
-    }
+    });
 }
 
 resetBtn.addEventListener("click", () => {
     container.innerHTML = "";
-    sketch();
 });
 
 sketch();
