@@ -11,12 +11,6 @@
     box-sizing: border-box;
     width: calc(100% / var(--size));
     height: calc(100% / var(--size));
-}
-
-.miniSquares {
-    box-sizing: border-box;
-    width: calc(100% / var(--size));
-    height: calc(100% / var(--size));
     border: 1px solid black;
 }
 
