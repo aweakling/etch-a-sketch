@@ -2,6 +2,20 @@ const container = document.querySelector("#container");
 const resetBtn = document.querySelector(".resetBtn");
 const squareBtn = document.querySelector(".squareBtn");
 
+// random rgb colors
+function randomRGB(){
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+// darkening effect
+function (){
+    
+}
+
 // create 16 squares
 function sketch(size) {
     container.innerHTML = "";
@@ -12,7 +26,7 @@ function sketch(size) {
         squares.classList.add("squares");
 
         squares.addEventListener("mouseenter", () => {
-            squares.style.backgroundColor = "black";
+            squares.style.backgroundColor = randomRGB();
         });
         container.appendChild(squares);
     }
