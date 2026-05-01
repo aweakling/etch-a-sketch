@@ -11,11 +11,6 @@ function randomRGB(){
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// darkening effect
-function (){
-    
-}
-
 // create 16 squares
 function sketch(size) {
     container.innerHTML = "";
@@ -26,8 +21,14 @@ function sketch(size) {
         squares.classList.add("squares");
 
         squares.addEventListener("mouseenter", () => {
+            let opacity = parseFloat(squares.style.opacity) || 0;
+            
+            if(opacity < 1) opacity += 0.1;
+
             squares.style.backgroundColor = randomRGB();
+            squares.style.opacity = opacity;
         });
+
         container.appendChild(squares);
     }
 }
