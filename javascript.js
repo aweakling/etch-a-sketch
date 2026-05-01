@@ -49,6 +49,9 @@ resetBtn.addEventListener("click", () => {
     sketch(16);
 });
 
+
+// old logic creates a grid inside another grid which is hard to be scalable
+
 // function sketch(){    
 //     squareBtn.addEventListener("click", () => {
 //         let size = parseInt(prompt("Size of grid", 16));
